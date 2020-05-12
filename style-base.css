@@ -1,0 +1,70 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: 'Jost', helvetica, arial, sans-serif;
+  margin: 2em auto;
+  font-size: 16px;
+  width: 77ch;
+}
+
+a {
+  color: rgb(210, 0, 0);
+}
+
+a:visited {
+  color: rgb(210, 0, 0);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1.title {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  color: #000;
+  margin: 1em 0;
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-weight: 400;
+  margin: 1em 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-end;
+  margin-left: -5rem;
+}
+
+h2 > span {
+  width: 5rem;
+  text-align: right;
+  padding-right: 1rem;
+  font-size: small;
+  font-weight: 700;
+}
+
+label {
+  display: block;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+[type='checkbox'] {
+  margin-bottom: 1.5em;
+  margin-right: 0.25em;
+}
+
+.top {
+  font-size: smaller;
+}
+
+.top::before {
+  content: '← ';
+}
