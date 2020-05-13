@@ -68,3 +68,8 @@ input {
 .top::before {
   content: '← ';
 }
+
+footer {
+  font-size: small;
+  margin: 4em 0;
+}
