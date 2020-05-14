@@ -3,7 +3,7 @@
 
 <head>
   <title>
-    ⚓ Vanilla JS Academy | Day X | Project: Y
+    ⚓ Vanilla JS Academy | Day 3 | Project: Toggle Multiple Password Fields
   </title>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="../style-base.css" />
   <link rel="stylesheet" href="./style.css">
 
+  <!-- Load Polyfills -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es5,es2015,es2016,es2017,es2018,es2019&flags=gated"></script>
+
   <!-- import the webpage's javascript file -->
   <script src="./script.js" defer></script>
 
@@ -23,28 +26,30 @@
 
 <body>
   <nav class="top"><a href="/">Back to home</a></nav>
-  <h1>🐳 Day 1 | Project: Toggle Password Visibility</h1>
+  <h1>Day 3: Toggle Multiple Password Visibility</h1>
+
+  <p>Enter your current password and new password below.</p>
 
   <form>
     <div>
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" />
+      <label for="current-password">Current Password</label>
+      <input type="password" name="current-password" id="current-password">
     </div>
 
     <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
+      <label for="new-password">New Password</label>
+      <input type="password" name="new-password" id="new-password">
     </div>
 
     <div>
-      <label for="show-password">
-        <input type="checkbox" name="show-passwords" id="show-password" />
-        Show password
+      <label for="show-passwords">
+        <input type="checkbox" name="show-passwords" id="show-passwords">
+        Show passwords
       </label>
     </div>
 
     <p>
-      <button type="submit">Log In</button>
+      <button type="submit">Change Passwords</button>
     </p>
   </form>
 

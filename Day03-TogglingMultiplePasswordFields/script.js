@@ -1,23 +1,16 @@
 // Grab the password input element
-var pwInput = document.querySelector('#password');
+var passwords = Array.from(document.querySelectorAll('[type=password]'));
 
 // Grab the show password checkbox
-var pwToggle = document.querySelector('#show-password');
+var checkbox = document.querySelector('#show-passwords');
 
 function togglePasswordVisibility(event) {
-  console.log(event);
-  console.log(event.target);
+  var toggle = event.target.checked ? 'text' : 'password';
 
-  // Set pwType based on whether the checkbox is ticked or not
-  var pwType = event.target.checked ? 'text' : 'password';
-
-  // Toggle the password type
-  pwInput.type = pwType;
-
-  // Better to use setAttribute?
-  // pwInput.setAttribute("type", pwType);
+  passwords.forEach(function(password) {
+    password.type = toggle;
+  });
 }
 
 // Listen for click events on the password checkbox
-// Could also use a change event, but not sure if there is any benefit?
-pwToggle.addEventListener('click', togglePasswordVisibility, false);
+checkbox.addEventListener('click', togglePasswordVisibility, false);
