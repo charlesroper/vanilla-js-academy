@@ -1,15 +1,16 @@
-// Grab the password input element
-var passwords = Array.from(document.querySelectorAll('[type=password]'));
+// Grab the password input element as a NodeList
+// Don't need to convert to Array because forEach is polyfilled
+var passwords = document.querySelectorAll('[type=password]');
 
 // Grab the show password checkbox
 var checkbox = document.querySelector('#show-passwords');
 
-function togglePasswordVisibility(event) {
-  var toggle = event.target.checked ? 'text' : 'password';
+function togglePasswordVisibility() {
+  passwords.forEach(togglePassword);
+}
 
-  passwords.forEach(function(password) {
-    password.type = toggle;
-  });
+function togglePassword(password) {
+  password.type = checkbox.checked ? 'text' : 'password';
 }
 
 // Listen for click events on the password checkbox
