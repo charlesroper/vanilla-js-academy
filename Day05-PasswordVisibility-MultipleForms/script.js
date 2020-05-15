@@ -13,7 +13,7 @@ function togglePasswords(event) {
     `[data-password='${checkboxFor}']`
   );
 
-  // Iterate over each password to toggle and call the toggle function
+  // Iterate over each password NodeList to toggle and call the toggle function
   passwordsToToggle.forEach(toggle);
 
   // The toggle function takes the password argument and flips it based on the
