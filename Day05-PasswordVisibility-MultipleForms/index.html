@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    ⚓ Vanilla JS Academy | Day 5 | Project: Password Visibility Multiple Forms
+  </title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="../style-reset.css" />
+  <link rel="stylesheet" href="../style-base.css" />
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Load Polyfills -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default,es5,es2015,es2016,es2017,es2018,es2019&flags=gated"></script>
+
+  <!-- import the webpage's javascript file -->
+  <script src="./script.js" defer></script>
+
+  <!-- import Jost variable weights 400 (regular) to 700 (bold) + italics. -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="top"><a href="/">Back to home</a></nav>
+  <h1>Day 5 | Project: Password Visibility — Multiple Forms</h1>
+
+  <h2>Change Username</h2>
+
+  <p>Enter your username and password to change your username.</p>
+
+  <form>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username">
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" data-password="change-username">
+    </div>
+
+    <div>
+      <label for="show-password">
+        <input type="checkbox" name="show-password" id="show-password" data-checkbox-for="change-username">
+        Show password
+      </label>
+    </div>
+
+    <p>
+      <button type="submit">Change Username</button>
+    </p>
+  </form>
+
+  <hr>
+
+  <h2>Change Password</h2>
+
+  <p>Enter your current password and new password below.</p>
+
+  <form>
+    <div>
+      <label for="current-password">Current Password</label>
+      <input type="password" name="current-password" id="current-password" data-password="change-password">
+    </div>
+
+    <div>
+      <label for="new-password">New Password</label>
+      <input type="password" name="new-password" id="new-password" data-password="change-password">
+    </div>
+
+    <div>
+      <label for="show-passwords">
+        <input type="checkbox" name="show-passwords" id="show-passwords" data-checkbox-for="change-password">
+        Show passwords
+      </label>
+    </div>
+
+    <p>
+      <button type="submit">Change Passwords</button>
+    </p>
+  </form>
+
+
+
+  <footer>
+    <p>Design and code by Charles. Source on <a href="https://github.com/charlesroper/vanilla-js-academy">GitHub</a>.</p>
+  </footer>
+
+</body>
+
+</html>
