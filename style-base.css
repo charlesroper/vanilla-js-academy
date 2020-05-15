@@ -35,6 +35,12 @@ h1 {
 }
 
 h2 {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 2em 0 1em;
+}
+
+.toc h2 {
   font-weight: 400;
   margin: 1em 0;
   font-size: 1rem;
@@ -43,7 +49,11 @@ h2 {
   margin-left: -5rem;
 }
 
-h2 > span {
+.toc h2 {
+  margin-left: -5rem;
+}
+
+.toc h2 > span {
   width: 5rem;
   text-align: right;
   padding-right: 1rem;
@@ -63,6 +73,11 @@ input {
   border: 2px solid #555;
 }
 
+[type='text'],
+[type='password'] {
+  width: 33.6%;
+}
+
 [type='checkbox'] {
   margin-bottom: 2em;
   margin-right: 0.5em;
@@ -72,6 +87,7 @@ input {
 
 [type='submit'] {
   border: none;
+  margin-bottom: 1em;
   padding: 10px 20px;
   background-color: rgb(210, 0, 0);
   color: #fff;
