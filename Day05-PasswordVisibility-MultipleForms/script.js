@@ -18,7 +18,8 @@ function togglePasswords(event) {
   passwordsToToggle.forEach(toggle);
 
   // The toggle function takes the password argument and flips it based on the
-  // target checkbox's current state
+  // target checkbox's current state. NOTE, this is a function inside a
+  // function, so not available on the global scope. Neat.
   function toggle(password) {
     password.type = event.target.checked ? 'text' : 'password';
   }
