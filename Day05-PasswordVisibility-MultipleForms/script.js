@@ -1,7 +1,7 @@
 function togglePasswords(event) {
   // We only want to get into the machinery of this function if we're actually
   // clicking on a checkbox, so return if the user didn't click a checkbox
-  if (event.target.type !== 'checkbox') return;
+  if (!event.target.matches('[data-checkbox-for')) return;
 
   // Get the type of password field we are toggling from the data-checkbox-for
   // data attribute.
