@@ -3,8 +3,9 @@
 body {
   font-family: 'Jost', helvetica, arial, sans-serif;
   margin: 2em auto;
+  padding: 0 5vw;
   font-size: 16px;
-  width: 77ch;
+  max-width: 70ch;
 }
 
 p {
@@ -32,6 +33,14 @@ h1 {
   color: #000;
   margin: 1em 0;
   font-size: 1.2rem;
+}
+
+.headerDay {
+  display: block;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  letter-spacing: 0.05em;
 }
 
 h2 {
@@ -67,10 +76,18 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+input,
+textarea {
   margin-bottom: 1.25em;
   padding: 8px;
   border: 2px solid #555;
+}
+
+textarea {
+  width: 100%;
+  height: 10em;
+  resize: vertical;
+  margin-bottom: 0.5em;
 }
 
 [type='text'],

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>
+		⚓ Vanilla JS Academy | Day 7 | Project: Character Count
+	</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- import the webpage's stylesheet -->
+	<link rel="stylesheet" href="../style-reset.css" />
+	<link rel="stylesheet" href="../style-base.css" />
+	<link rel="stylesheet" href="./style.css">
+
+	<!-- Load Polyfills -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default,es5,es2015,es2016,es2017,es2018,es2019&flags=gated"></script>
+
+	<!-- import the webpage's javascript file -->
+	<script src="./script.js" defer></script>
+
+	<!-- import Jost variable weights 400 (regular) to 700 (bold) + italics. -->
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="top"><a href="/">Back to home</a></nav>
+	<h1><span class="headerDay">Day 7</span> Character Count</h1>
+
+	<form>
+		<label for="text">Enter your text below.</label>
+		<textarea id="text"></textarea>
+	</form>
+
+	<p>You've written <strong><span id="character-count" data-count-for="#text">0</span> characters</strong>.</p>
+
+	<footer>
+		<p>Design and code by Charles. Source on <a href="https://github.com/charlesroper/vanilla-js-academy">GitHub</a>.</p>
+	</footer>
+
+</body>
+
+</html>
