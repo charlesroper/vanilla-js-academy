@@ -6,6 +6,7 @@ body {
   padding: 0 5vw;
   font-size: 16px;
   max-width: 70ch;
+  background-color: #fffff3;
 }
 
 p {
@@ -47,6 +48,15 @@ h2 {
   font-size: 1em;
   font-weight: 700;
   margin: 2em 0 1em;
+  line-height: 2 em;
+}
+
+main {
+  margin-left: 3em;
+}
+
+.toc {
+  margin-left: -5em;
 }
 
 .toc h2 {
@@ -55,19 +65,24 @@ h2 {
   font-size: 1rem;
   display: flex;
   align-items: flex-end;
-  margin-left: -5rem;
-}
-
-.toc h2 {
-  margin-left: -5rem;
+  line-height: 2em;
 }
 
 .toc h2 > span {
-  width: 5rem;
+  min-width: 5rem;
   text-align: right;
   padding-right: 1rem;
   font-size: small;
   font-weight: 700;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  letter-spacing: 0.05em;
+  line-height: 1.75rem;
+}
+
+.toc h2 > a {
+  flex-basis: auto;
 }
 
 label {
