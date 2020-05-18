@@ -21,6 +21,6 @@ function updateCharacterCount() {
 }
 
 window.addEventListener('input', updateCharacterCount, false);
-window.addEventListener('DOMContentLoaded', updateCharacterCount, false);
+window.addEventListener('pageshow', updateCharacterCount, false);
 
 // [1] The web's grain: https://frankchimero.com/blog/2015/the-webs-grain/
