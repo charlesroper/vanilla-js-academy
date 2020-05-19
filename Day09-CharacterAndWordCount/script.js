@@ -10,9 +10,7 @@ var wordCountTarget = document.querySelector(
 
 function updateCharacterCount() {
   if (!charCountTarget.type === 'textarea') return;
-
-  var charCount = charCountTarget.value.length;
-  charCounter.textContent = charCount;
+  charCounter.textContent = charCountTarget.value.length;
 }
 
 function updateWordCount() {
