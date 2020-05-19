@@ -28,7 +28,19 @@
   <nav class="top"><a href="/">Back to home</a></nav>
   <h1><span class="headerDay">Day 9</span> Character and Word Count</h1>
 
+  <form>
+    <label for="text">Enter your text below.</label>
+    <textarea id="text"></textarea>
+  </form>
 
+  <p>You've written
+    <strong>
+      <span id="character-count" data-count-for="#text">0</span> characters
+    </strong>
+    and
+    <strong style="white-space: normal;">
+      <span id="word-count" data-wordcount-for="#text">0</span> words</strong>.
+  </p>
 
   <footer>
     <p>Design and code by Charles. Source on <a href="https://github.com/charlesroper/vanilla-js-academy">GitHub</a>.</p>
