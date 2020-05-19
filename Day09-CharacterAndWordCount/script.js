@@ -1,3 +1,5 @@
+// See this regex: https://regex101.com/r/PM7lwE/1/
+
 // Could do with DRYing this, but not really worth it right now.
 var charCounter = document.querySelector('[data-count-for]');
 var wordCounter = document.querySelector('[data-wordcount-for]');
@@ -15,9 +17,6 @@ function updateCharacterCount() {
 
 function updateWordCount() {
   if (!wordCountTarget.type === 'textarea') return;
-
-  // Build an array of words, including words with apostrophes.
-  // See this regex: https://regex101.com/r/PM7lwE/1/
   var wordsArray = wordCountTarget.value.trim().match(/\w+('\w+)*/g) || [];
   wordCounter.textContent = wordsArray.length;
 }
