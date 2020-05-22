@@ -17,9 +17,13 @@ function updateCharacterCount() {
 
 function updateWordCount() {
   if (!wordCountTarget.type === 'textarea') return;
-  var wordsArray = wordCountTarget.value.match(/\w+(['-]\w+)*/g) || [];
+  var wordsArray = wordCountTarget.value.match(regexMatchWords()) || [];
   console.log(wordsArray);
   wordCounter.textContent = wordsArray.length;
+}
+
+function regexMatchWords() {
+  return /\w+(['-]\w+)*/g;
 }
 
 // REGISTER EVENT LISTENERS ----------------------------------------------------
