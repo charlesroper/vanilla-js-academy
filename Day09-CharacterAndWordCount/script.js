@@ -17,7 +17,7 @@ function updateCharacterCount() {
 
 function updateWordCount() {
   if (!wordCountTarget.type === 'textarea') return;
-  var wordsArray = wordCountTarget.value.match(/\w+('\w+)*/g) || [];
+  var wordsArray = wordCountTarget.value.match(/\w+(['-]\w+)*/g) || [];
   console.log(wordsArray);
   wordCounter.textContent = wordsArray.length;
 }
