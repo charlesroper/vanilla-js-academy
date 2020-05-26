@@ -25,6 +25,7 @@ function getRonQuote() {
   }
 
   function quoteMalfunction() {
+    bq.style.display = "none";
     errorMessage.style.display = "block";
   }
 }
