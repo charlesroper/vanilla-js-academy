@@ -44,6 +44,11 @@
 }
 
 blockquote {
+  display: none;
+}
+
+blockquote,
+#errorMessage {
   padding: 2rem 2.5rem 2.5rem 2.5rem;
   font-style: italic;
 }

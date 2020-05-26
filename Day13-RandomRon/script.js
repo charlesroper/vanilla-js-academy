@@ -1,13 +1,15 @@
 function getRonQuote() {
   const RON_QUOTE = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
   const bq = document.querySelector("blockquote");
+  const errorMessage = document.getElementById("errorMessage");
 
+  errorMessage.style.display = "none";
   bq.textContent = "Ron is thinking...";
 
   fetch(RON_QUOTE)
     .then(handleResponse)
     .then(updateQuote)
-    .catch(err => console.error("Something went wrong", err));
+    .catch(quoteMalfunction);
 
   function handleResponse(response) {
     if (response.ok) {
@@ -18,7 +20,12 @@ function getRonQuote() {
   }
 
   function updateQuote(data) {
+    bq.style.display = "block";
     bq.innerText = data;
+  }
+
+  function quoteMalfunction() {
+    errorMessage.style.display = "block";
   }
 }
 
