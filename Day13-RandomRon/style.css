@@ -1,9 +1,9 @@
 :root {
-  --base: #fffff3;
+  --base: var(--base-bg-hi);
   --bg-blend: multiply;
   --blur: 0px;
   --fg-blend: lighten;
-  --foreground: #000000;
+  --foreground: var(--base-fg-lo);
   --opacity: 0.75;
   --spacing: 0px;
 }
@@ -70,5 +70,5 @@ p.moreRon {
 }
 
 button:active {
-  background-color: rgb(210 0 0 / 75%);
+  background-color: var(--base-hi-lo);
 }

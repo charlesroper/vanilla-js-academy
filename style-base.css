@@ -1,4 +1,12 @@
 /* CSS files add styling rules to your content */
+:root {
+  --base-bg-hi: hsl(60, 100%, 98%);
+  --base-fg-lo: hsl(0, 0%, 0%);
+  --base-fg-md: hsl(0, 0%, 50%);
+  --base-hi-hi: hsl(0, 100%, 80%);
+  --base-hi-md: hsl(0, 100%, 40%);
+  --base-hi-lo: hsl(0, 100%, 20%);
+}
 
 body {
   font-family: "Jost", helvetica, arial, sans-serif;
@@ -6,7 +14,8 @@ body {
   padding: 0 5vw;
   font-size: 16px;
   max-width: 70ch;
-  background-color: #fffff3;
+  background-color: var(--base-bg-hi);
+  color: var(--base-fg-lo);
 }
 
 p {
@@ -14,11 +23,11 @@ p {
 }
 
 a {
-  color: rgb(210, 0, 0);
+  color: var(--base-hi-md);
 }
 
 a:visited {
-  color: rgb(210, 0, 0);
+  color: var(--base-hi-md);
 }
 
 a:hover {
@@ -31,7 +40,6 @@ h1.title {
 }
 
 h1 {
-  color: #000;
   margin: 1em 0;
   font-size: 1.2rem;
 }
@@ -95,7 +103,7 @@ input,
 textarea {
   margin-bottom: 1.25em;
   padding: 8px;
-  border: 2px solid #555;
+  border: 2px solid var(--base-fg-md);
 }
 
 textarea {
@@ -114,7 +122,7 @@ textarea {
   margin-bottom: 2em;
   margin-right: 0.5em;
   transform: scale(1.5);
-  border-color: #000;
+  border-color: var(--base-fg-md);
 }
 
 [type="submit"],
@@ -122,8 +130,8 @@ button {
   border: none;
   margin-bottom: 1em;
   padding: 10px 20px;
-  background-color: rgb(210, 0, 0);
-  color: #fff;
+  background-color: var(--base-hi-md);
+  color: var(--base-bg-hi);
 }
 
 [type="submit"]:focus,
@@ -161,5 +169,5 @@ button:focus,
 select:focus,
 textarea:focus {
   outline: 0;
-  box-shadow: 0 0 1px 4px rgb(210 0 0 / 0.25);
+  box-shadow: 0 0 1px 4px var(--base-fg-lo);
 }
