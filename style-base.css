@@ -1,7 +1,7 @@
 /* CSS files add styling rules to your content */
 
 body {
-  font-family: 'Jost', helvetica, arial, sans-serif;
+  font-family: "Jost", helvetica, arial, sans-serif;
   margin: 2em auto;
   padding: 0 5vw;
   font-size: 16px;
@@ -105,19 +105,20 @@ textarea {
   margin-bottom: 0.5em;
 }
 
-[type='text'],
-[type='password'] {
+[type="text"],
+[type="password"] {
   width: 33.6%;
 }
 
-[type='checkbox'] {
+[type="checkbox"] {
   margin-bottom: 2em;
   margin-right: 0.5em;
   transform: scale(1.5);
   border-color: #000;
 }
 
-[type='submit'] {
+[type="submit"],
+button {
   border: none;
   margin-bottom: 1em;
   padding: 10px 20px;
@@ -125,9 +126,9 @@ textarea {
   color: #fff;
 }
 
-[type='submit']:focus,
-[type='active'],
-[type='submit']::-moz-focus-inner {
+[type="submit"]:focus,
+[type="active"],
+[type="submit"]::-moz-focus-inner {
   outline: none;
   border: 0;
 }
@@ -137,7 +138,7 @@ textarea {
 }
 
 .top::before {
-  content: '← ';
+  content: "← ";
 }
 
 footer {
@@ -145,17 +146,17 @@ footer {
   margin: 4em 0;
 }
 
-[type='checkbox']:focus,
-[type='date']:focus,
-[type='email']:focus,
-[type='file']:focus,
-[type='number']:focus,
-[type='password']:focus,
-[type='radio']:focus,
-[type='search']:focus,
-[type='submit']:focus,
-[type='tel']:focus,
-[type='text']:focus,
+[type="checkbox"]:focus,
+[type="date"]:focus,
+[type="email"]:focus,
+[type="file"]:focus,
+[type="number"]:focus,
+[type="password"]:focus,
+[type="radio"]:focus,
+[type="search"]:focus,
+[type="submit"]:focus,
+[type="tel"]:focus,
+[type="text"]:focus,
 button:focus,
 select:focus,
 textarea:focus {
