@@ -1,31 +1,45 @@
+const quotes = [];
+
 function getRonQuote() {
   const RON_QUOTE = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
-  const bq = document.querySelector("blockquote");
+  const RON_THINKING_QUOTE = "Ron is thinking...";
+  const blockquote = document.querySelector("blockquote");
   const errorMessage = document.getElementById("errorMessage");
 
   errorMessage.style.display = "none";
-  bq.textContent = "Ron is thinking...";
+  blockquote.textContent = RON_THINKING_QUOTE;
 
   fetch(RON_QUOTE)
     .then(handleResponse)
+    .then(checkForDuplicateQuote)
     .then(updateQuote)
     .catch(quoteMalfunction);
 
   function handleResponse(response) {
-    if (response.ok) {
-      return response.json();
-    } else {
-      return Promise.reject(response);
-    }
+    return response.ok ? response.json() : Promise.reject(response);
   }
 
-  function updateQuote(data) {
-    bq.style.display = "block";
-    bq.innerText = data;
+  function checkForDuplicateQuote(data) {
+    const DUPLICATE_CHECK_LIMIT = 50;
+    let quote = data[0];
+    if (quotes.length === DUPLICATE_CHECK_LIMIT) quotes.shift();
+    if (quotes.includes(quote)) {
+      console.log("DUPLICATE: ", quote);
+      quote = RON_THINKING_QUOTE;
+      getRonQuote(); // Recursion!
+    } else {
+      quotes.push(quote);
+    }
+    return quote;
+  }
+
+  function updateQuote(quote) {
+    blockquote.style.display = "block";
+    blockquote.innerText = quote;
   }
 
   function quoteMalfunction() {
-    bq.style.display = "none";
+    blockquote.style.display = "none";
     errorMessage.style.display = "block";
   }
 }
