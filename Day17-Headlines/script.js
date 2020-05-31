@@ -6,7 +6,7 @@ function getHeadlines() {
 
   const topStories = CONFIG.endpoint + CONFIG.defaultSection;
   const app = document.getElementById("app");
-  app.innerHTML = `<p>Loading...</p>`;
+  app.innerHTML = `<p>Loading <span>...</span></p>`;
 
   fetch(topStories)
     .then(handleResponse)
@@ -36,4 +36,18 @@ function getHeadlines() {
   }
 }
 
+function loaderrr() {
+  const dots = document.querySelector("#app >p > span");
+  const itervalId = setInterval(dotter, 100);
+  function dotter() {
+    if (dots) {
+      if (dots.innerText.length === 10) dots.innerText = "";
+      dots.innerText += ".";
+    } else {
+      clearInterval(itervalId);
+    }
+  }
+}
+
 window.addEventListener("DOMContentLoaded", getHeadlines, false);
+window.addEventListener("DOMContentLoaded", loaderrr, false);
