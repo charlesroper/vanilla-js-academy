@@ -37,7 +37,7 @@ function getHeadlines() {
 }
 
 function loaderrr() {
-  const dots = document.querySelector("#app >p > span");
+  const dots = document.querySelector("#app > p > span");
   const itervalId = setInterval(dotter, 100);
   function dotter() {
     if (dots) {

@@ -59,6 +59,12 @@ h2 {
   line-height: 2 em;
 }
 
+h3 {
+  font-size: 1em;
+  font-weight: 500;
+  font-style: italic;
+}
+
 main {
   margin-left: 3em;
 }
