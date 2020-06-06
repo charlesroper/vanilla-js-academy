@@ -13,7 +13,7 @@ function shuffleMonsters() {
       return (
         '<div class="grid"><img alt="' +
         monster.alt +
-        '" src="images/' +
+        '" src="/images/monsters/' +
         monster.name +
         '.svg"></div>'
       );
