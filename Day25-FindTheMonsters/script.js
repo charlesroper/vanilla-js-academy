@@ -1,4 +1,4 @@
-CONFIG = {
+var CONFIG = {
   images: "/images/monsters/"
 };
 
@@ -18,8 +18,7 @@ function main() {
 
 function preloadMonsters() {
   MONSTERS.forEach(function(monster) {
-    var img = new Image();
-    img.src = CONFIG.images + monster.name + ".svg";
+    new Image().src = CONFIG.images + monster.name + ".svg";
   });
 }
 
