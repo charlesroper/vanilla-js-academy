@@ -10,13 +10,21 @@ monstersGrid.addEventListener("click", openDoor);
 restartButton.addEventListener("click", main);
 
 function main() {
+  preloadMonsters();
   var shuffledMonsters = shuffleMonsters();
   var doorsHtml = renderDoors(shuffledMonsters);
   monstersGrid.innerHTML = doorsHtml;
 }
 
+function preloadMonsters() {
+  MONSTERS.forEach(function(monster) {
+    var img = new Image();
+    img.src = CONFIG.images + monster.name + ".svg";
+  });
+}
+
 function shuffleMonsters() {
-  return shuffle(monsters).slice();
+  return shuffle(MONSTERS).slice();
 }
 
 function renderDoors(monsters) {
@@ -76,7 +84,7 @@ function shuffle(array) {
 // DATA ========================================================================
 
 // The monsters and socks
-var monsters = [
+var MONSTERS = Object.freeze([
   {
     name: "monster1",
     alt: "A small, yellow, fluffy floating monster with a curly snout"
@@ -126,4 +134,4 @@ var monsters = [
     alt: "A big black, furry, cuddly monster with a smile and long arms"
   },
   { name: "sock", alt: "A pair of smell old socks" }
-];
+]);
