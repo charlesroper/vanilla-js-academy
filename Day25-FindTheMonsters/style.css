@@ -1,0 +1,23 @@
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
+
+.grid {
+  height: 8em;
+  padding: 1em;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: inline;
+  width: 5em;
+}
+
+.button {
+  margin: 2em 0 1em;
+  text-align: center;
+}
