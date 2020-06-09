@@ -9,17 +9,12 @@ document.addEventListener("DOMContentLoaded", main);
 monstersGrid.addEventListener("click", openDoor);
 restartButton.addEventListener("click", main);
 
+var shuffledMonsters;
+
 function main() {
-  preloadMonsters();
-  var shuffledMonsters = shuffleMonsters();
+  shuffledMonsters = shuffleMonsters();
   var doorsHtml = renderDoors(shuffledMonsters);
   monstersGrid.innerHTML = doorsHtml;
-}
-
-function preloadMonsters() {
-  MONSTERS.forEach(function(monster) {
-    new Image().src = CONFIG.images + monster.name + ".svg";
-  });
 }
 
 function shuffleMonsters() {
@@ -28,11 +23,12 @@ function shuffleMonsters() {
 
 function renderDoors(monsters) {
   return monsters
-    .map(function(monster) {
+    .map(function(monster, index) {
       var html = "";
-      html += "<div class='grid'>";
-      html += "<a href='' role='button' data-monster='" + monster.name + "'>";
-      html += "<img src='" + CONFIG.images + "door.svg'/>";
+      html += "<div class='grid' aria-live='polite'>";
+      html += "<a href='' role='button' data-monster='" + index + "'>";
+      html += "<img alt='A door - click on me to open' src='";
+      html += CONFIG.images + "door.svg'/>";
       html += "</a>";
       html += "</div>";
       return html;
@@ -48,10 +44,11 @@ function openDoor(event) {
   var link = clicked.closest("a");
   var img = link.firstChild;
   var imgFile = img.src.split("/").pop();
-  var monster = link.getAttribute("data-monster");
+  var monsterIndex = link.getAttribute("data-monster");
 
   if (imgFile === "door.svg") {
-    img.src = CONFIG.images + monster + ".svg";
+    img.src = CONFIG.images + shuffledMonsters[monsterIndex].name + ".svg";
+    img.alt = shuffledMonsters[monsterIndex].alt;
   }
 }
 
@@ -83,7 +80,7 @@ function shuffle(array) {
 // DATA ========================================================================
 
 // The monsters and socks
-var MONSTERS = Object.freeze([
+var MONSTERS = [
   {
     name: "monster1",
     alt: "A small, yellow, fluffy floating monster with a curly snout"
@@ -132,5 +129,5 @@ var MONSTERS = Object.freeze([
     name: "monster11",
     alt: "A big black, furry, cuddly monster with a smile and long arms"
   },
-  { name: "sock", alt: "A pair of smell old socks" }
-]);
+  { name: "sock", alt: "A pair of smelly old socks" }
+];
