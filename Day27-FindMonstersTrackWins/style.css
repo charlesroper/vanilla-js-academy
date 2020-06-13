@@ -1,0 +1,61 @@
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
+
+.grid {
+  height: 8em;
+  padding: 1em;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: inline;
+  width: 5em;
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.grid > button {
+  background-color: transparent;
+}
+
+.score {
+  margin: 1em 0;
+}
+
+.end > * + * {
+  margin: 1em 0;
+}
+
+.end img,
+.end button {
+  display: block;
+}
+
+/* .status {
+  display: flex;
+  margin: 2em 0 1em;
+  text-align: center;
+} */
