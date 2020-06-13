@@ -65,15 +65,16 @@ function winOrLose(imgSrc) {
     handleEndgame("lose");
   } else {
     score++;
-    if (score === shuffledMonsters.length) handleEndgame("win");
+    if (score === shuffledMonsters.length - 1) handleEndgame("win");
   }
 }
 
 function handleEndgame(winOrLose) {
   var retryHTML = winOrLose === "win" ? handleWin() : handleLose();
-  var restartButton = document.getElementById("restart");
   monstersGrid.className = "end";
   monstersGrid.innerHTML = retryHTML;
+
+  var restartButton = document.getElementById("restart");
   restartButton.addEventListener("click", main);
 }
 
@@ -81,7 +82,8 @@ function handleLose() {
   var retryHTML = "";
   retryHTML += "<h2>You Lose!</h2>";
   retryHTML += "<img src='/images/monsters/sock.svg' alt='You found a sock!'>";
-  retryHTML += "<div id='score'>Score: <span>" + score + "</span></div>";
+  retryHTML +=
+    "<div id='score'>You found <span>" + score + "</span> monsters</div>";
   retryHTML += "<button id='restart'>Restart!</button>";
   return retryHTML;
 }
