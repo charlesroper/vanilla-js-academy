@@ -1,8 +1,5 @@
-var CONFIG = {
-  images: "/images/monsters/"
-};
-
 // Globals
+var imgFolder = "/images/monsters/";
 var monstersGrid = document.getElementById("monsters");
 var shuffledMonsters;
 var score;
@@ -31,7 +28,7 @@ function renderDoors(monsters) {
       html += "<div class='grid' aria-live='polite'>";
       html += "<button data-monster='" + index + "'>";
       html += "<img alt='A door' src='";
-      html += CONFIG.images + "door.svg'/>";
+      html += imgFolder + "door.svg'/>";
       html += "</button>";
       html += "</div>";
       return html;
@@ -52,7 +49,7 @@ function openDoor(event) {
   var monsterIndex = button.getAttribute("data-monster");
 
   if (imgFile === "door.svg") {
-    var imgSrc = CONFIG.images + shuffledMonsters[monsterIndex].name + ".svg";
+    var imgSrc = imgFolder + shuffledMonsters[monsterIndex].name + ".svg";
     var imgAlt = shuffledMonsters[monsterIndex].alt;
     button.parentElement.innerHTML =
       "<img src='" + imgSrc + "' alt='" + imgAlt + "'>";
