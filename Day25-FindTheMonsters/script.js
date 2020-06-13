@@ -47,8 +47,10 @@ function openDoor(event) {
   var monsterIndex = link.getAttribute("data-monster");
 
   if (imgFile === "door.svg") {
-    img.src = CONFIG.images + shuffledMonsters[monsterIndex].name + ".svg";
-    img.alt = shuffledMonsters[monsterIndex].alt;
+    var imgSrc = CONFIG.images + shuffledMonsters[monsterIndex].name + ".svg";
+    var imgAlt = shuffledMonsters[monsterIndex].alt;
+    link.parentElement.innerHTML =
+      "<img src='" + imgSrc + "' alt='" + imgAlt + "'>";
   }
 }
 
