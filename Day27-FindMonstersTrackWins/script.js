@@ -27,8 +27,12 @@ function renderDoors(monsters) {
       var html = "";
       html += "<div class='grid' aria-live='polite'>";
       html += "<button data-monster='" + index + "'>";
-      html += "<img alt='A door' src='";
+      html += "<img alt='' src='";
       html += imgFolder + "door.svg'/>";
+      html += "<span class='visually-hidden'>";
+      html += "Door " + (index + 1);
+      html += " of " + shuffledMonsters.length;
+      html += "</span>";
       html += "</button>";
       html += "</div>";
       return html;
@@ -145,8 +149,7 @@ var MONSTERS = [
   },
   {
     name: "monster6",
-    alt:
-      "A green triangle monster who looks so angry he's standing on his hands upside down"
+    alt: "An upside down green triangle monster who looks so angry"
   },
   {
     name: "monster7",
@@ -158,8 +161,7 @@ var MONSTERS = [
   },
   {
     name: "monster9",
-    alt:
-      "A big blue monster that looks like fly with bug eyes, three tiny legs and a smile"
+    alt: "A big blue monster that looks like fly with bug eyes"
   },
   {
     name: "monster10",
