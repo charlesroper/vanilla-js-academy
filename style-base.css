@@ -8,6 +8,10 @@
   --base-hi-lo: hsl(0, 100%, 20%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Jost", helvetica, arial, sans-serif;
   margin: 2em auto;
