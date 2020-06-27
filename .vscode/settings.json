@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
     "loaderrr"
-  ]
+  ],
+  "prettier.singleQuote": true
 }
