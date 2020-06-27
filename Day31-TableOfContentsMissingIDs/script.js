@@ -4,10 +4,10 @@ var fragment = new DocumentFragment();
 h2s.forEach(function(h2) {
   var link = document.createElement("a");
   var regex = /[\s'"]+/gm;
-  var id = h2.id === "" ? h2.innerHTML.replace(regex, "-") : h2.id;
 
-  h2.id = id;
-  link.href = "#" + id;
+  if (!h2.id) h2.id = h2.innerText.replace(regex, "-");
+
+  link.href = "#" + h2.id;
   link.innerText = h2.innerText;
 
   var listItem = document.createElement("li");
