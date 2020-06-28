@@ -52,7 +52,7 @@
 
     app.innerHTML = /*html*/ `
       <h2 class="weatherTitle">
-        Weather for ${data.city_name}, ${data.country_code}
+        Weather for ${s(data.city_name)}, ${s(data.country_code)}
       </h2>
       <time>
         ${new Intl.DateTimeFormat('default', dateTimeOptions).format(
@@ -60,12 +60,19 @@
         )}
       </time>
       <div class="weatherCard">
-        <img src="https://www.weatherbit.io/static/img/icons/${
+        <img src="https://www.weatherbit.io/static/img/icons/${s(
           data.weather.icon
-        }.png" width="50" height="50" />
-        <p class="weatherCard temp">${data.temp} <sup>&deg;C</sup></p>
+        )}.png" width="50" height="50" />
+        <p class="weatherCard temp">${s(data.temp)} <sup>&deg;C</sup></p>
       </div>
-      <p>${data.weather.description}</p>
+      <p>${s(data.weather.description)}</p>
     `;
+  }
+
+  // Sanitise helper
+  function s(str) {
+    var temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
   }
 })();
