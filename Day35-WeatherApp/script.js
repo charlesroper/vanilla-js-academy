@@ -1,11 +1,7 @@
 (function() {
   const latlong = getLatLong();
   const weatherData = getWeatherData(latlong);
-  renderWeather(weatherData).catch(error => {
-    console.error(error);
-    document.getElementById('app').innerHTML =
-      'There was an error. Try the <a href="https://www.metoffice.gov.uk/">MetOffice</a> instead.';
-  });
+  renderWeather(weatherData).catch(handleError);
 
   async function getLatLong() {
     const response = await fetch('https://ipapi.co/json/');
@@ -67,6 +63,12 @@
       </div>
       <p>${s(data.weather.description)}</p>
     `;
+  }
+
+  function handleError(error) {
+    console.error(error);
+    document.getElementById('app').innerHTML =
+      'There was an error. Try the <a href="https://www.metoffice.gov.uk/">MetOffice</a> instead.';
   }
 
   // Sanitise helper
