@@ -1,0 +1,41 @@
+#app {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--base-fg-md);
+  max-width: 300px;
+  padding: 1em;
+}
+
+#app > * {
+  margin: 0;
+}
+
+#app > time {
+  font-size: small;
+}
+
+.weatherCard {
+  display: flex;
+  /* align-items: center; */
+}
+
+.weatherCard * {
+  margin: 0;
+  padding: 0;
+}
+
+.weatherCard img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.weatherCard.temp {
+  font-size: 2.5em;
+  line-height: 50px;
+}
+
+.weatherCard sup {
+  line-height: 1.5em;
+  font-size: 1rem;
+}
